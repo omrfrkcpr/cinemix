@@ -19,15 +19,12 @@ const AuthContext = createContext();
 // context provider
 
 const AuthContextProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState({});
+  const [user, setUser] = useState({});
   const navigate = useNavigate();
 
   const userObserver = () => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        // const { email, displayName, photoURL } = user;
-        setCurrentUser(user);
-      }
+    onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
     });
   };
 
@@ -92,7 +89,7 @@ const AuthContextProvider = ({ children }) => {
   };
 
   const values = {
-    currentUser,
+    user,
     signup,
     login,
     logout,

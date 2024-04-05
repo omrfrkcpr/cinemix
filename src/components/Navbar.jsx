@@ -4,7 +4,7 @@ import { useAuthContext } from "../context/AuthContext";
 import { toastErrorNotify } from "../helpers/toastNotify";
 
 const Navbar = () => {
-  const { currentUser, logout } = useAuthContext();
+  const { user, logout } = useAuthContext();
   const navigate = useNavigate();
 
   const handleLogout = async () => {
@@ -20,12 +20,13 @@ const Navbar = () => {
     <div className="absolute w-full p-4 flex items-center justify-between z-50">
       <Link to="/">
         <h1 className="uppercase text-red-600 font-nsans-bold cursor-pointer text-5xl">
-          netflix
+          cinemix
         </h1>
       </Link>
 
-      {currentUser?.email ? (
+      {user?.email ? (
         <div>
+          <Switch />
           <Link to="/profile">
             <button className="capitalize pr-4">profile</button>
           </Link>
@@ -39,6 +40,7 @@ const Navbar = () => {
         </div>
       ) : (
         <div>
+          <Switch />
           <Link to="/login">
             <button className="capitalize pr-4">login</button>
           </Link>
