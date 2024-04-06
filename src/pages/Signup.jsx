@@ -1,25 +1,36 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../context/AuthContext";
+import GoogleIcon from "../assets/GoogleIcon";
 
 const Signup = () => {
   const [rememeberLogin, setRememberLogin] = useState(true);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [info, setInfo] = useState({
+    email: "",
+    password: "",
+    firstName: "",
+    lastName: "",
+  });
 
-  const { signUp } = useAuthContext();
+  const { signup, signGoogleProvider } = useAuthContext();
   const navigate = useNavigate();
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      await signUp(email, password);
+      await signup(email, password, `${firstName} ${lastName}`);
       navigate("/login");
     } catch (err) {
       console.log(err);
     }
   };
+
+  const handleChange = (e) => {
+    setInfo({ ...info, [e.target.name]: e.target.value });
+  };
+
+  console.log(info);
 
   return (
     <>
@@ -42,22 +53,46 @@ const Signup = () => {
               >
                 <input
                   className="p-3 my-2 bg-gray-700 rounded"
+                  type="text"
+                  placeholder="firstName"
+                  autoComplete="firstName"
+                  value={info.firstName}
+                  onChange={handleChange}
+                />
+                <input
+                  className="p-3 my-2 bg-gray-700 rounded"
+                  type="text"
+                  placeholder="lastName"
+                  autoComplete="lastName"
+                  value={info.lastName}
+                  onChange={handleChange}
+                />
+                <input
+                  className="p-3 my-2 bg-gray-700 rounded"
                   type="email"
                   placeholder="email"
                   autoComplete="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  value={info.email}
+                  onChange={handleChange}
                 />
                 <input
                   className="p-3 my-2 bg-gray-700 rounded"
                   type="password"
                   placeholder="password"
                   autoComplete="current-password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  value={info.password}
+                  onChange={handleChange}
                 />
-                <button className="bg-orange-600 py-3 my-6 rounded font-nsans-bold hover:bg-orange-700">
+                <button className="bg-orange-600 py-3 my-4 rounded font-nsans-bold hover:bg-orange-700">
                   Sign Up
+                </button>
+                <button
+                  onClick={signGoogleProvider}
+                  className="btn-danger flex justify-between"
+                  type="button"
+                >
+                  Continue with Google
+                  <GoogleIcon color="currentColor" />
                 </button>
                 <div className="flex justify-between items-center text-gray-600">
                   <p>
