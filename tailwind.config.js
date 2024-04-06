@@ -8,7 +8,14 @@ export default {
         "nsans-medium": ["Nsans Medium"],
         "nsans-bold": ["Nsans Bold"],
       },
+      colors: {
+        "gray-dark-main": "#23242a",
+        "gray-dark-second": "#28292d",
+        "gray-light": "#d3dce6",
+        "red-main": "#ff4b45",
+      },
     },
   },
   plugins: [require("tailwind-scrollbar-hide")],
+  darkMode: "selector",
 };

@@ -1,4 +1,7 @@
 import React from "react";
+import Banner from "../components/Banner";
+import MovieRow from "../components/MovieRow";
+import endpoints from "../services/movieServices";
 
 const Home = () => {
   return (

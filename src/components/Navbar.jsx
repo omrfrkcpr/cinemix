@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../context/AuthContext";
 import { toastErrorNotify } from "../helpers/toastNotify";
+import Switch from "./Switch";
 
 const Navbar = () => {
   const { user, logout } = useAuthContext();
@@ -19,13 +20,13 @@ const Navbar = () => {
   return (
     <div className="absolute w-full p-4 flex items-center justify-between z-50">
       <Link to="/">
-        <h1 className="uppercase text-red-600 font-nsans-bold cursor-pointer text-5xl">
+        <h1 className="uppercase text-orange-600 font-nsans-bold cursor-pointer text-5xl">
           cinemix
         </h1>
       </Link>
 
       {user?.email ? (
-        <div>
+        <div className="flex justify-center items-center">
           <Switch />
           <Link to="/profile">
             <button className="capitalize pr-4">profile</button>
@@ -33,20 +34,20 @@ const Navbar = () => {
 
           <button
             onClick={handleLogout}
-            className="capitalize bg-red-600 px-6 py-2 rounded cursor-pointer"
+            className="capitalize bg-orange-600 px-6 py-2 rounded cursor-pointer"
           >
             logout
           </button>
         </div>
       ) : (
-        <div>
+        <div className="flex justify-center items-center">
           <Switch />
           <Link to="/login">
-            <button className="capitalize pr-4">login</button>
+            <button className="capitalize pr-4 text-white">login</button>
           </Link>
 
           <Link to="/signup">
-            <button className="capitalize bg-red-600 px-6 py-2 rounded cursor-pointer">
+            <button className="capitalize bg-orange-600 px-6 py-2 rounded cursor-pointer text-white">
               sign up
             </button>
           </Link>

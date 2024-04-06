@@ -30,7 +30,7 @@ const Banner = () => {
   const { title, backdrop_path, release_date, overview } = movie;
 
   return (
-    <div className="w-full h-[550px] lg:h-[850px]">
+    <div className="w-full h-[550px] lg:h-[850px] text-white">
       <div className="w-full h-full">
         <div className="absolute w-full h-[550px] lg:h-[850px] bg-gradient-to-r from-black" />
         <img
