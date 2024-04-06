@@ -53,33 +53,44 @@ const MovieDetail = () => {
         {error ? (
           <ErrorPage />
         ) : (
-          <div className="flex flex-col lg:flex-row max-w-6xl rounded-lg bg-gray-100 shadow-lg">
+          <div className="flex flex-col lg:flex-row max-w-6xl  rounded-lg bg-gray-100 shadow-lg dark:bg-gray-600">
             <img
               className=" lg:w-1/3 h-96 lg:h-[600px] object-cover rounded-t-lg md:rounded-none md:rounded-l-lg"
               src={poster_path ? baseImageUrl + poster_path : defaultImage}
               alt="poster"
             />
-            <div className="p-6 flex flex-col justify-between">
+            <div className="p-6 flex flex-col justify-between  ">
               <div>
-                <h5 className="text-gray-900 text-xl font-medium mb-2">
+                <h5 className="text-orange-600 dark:text-white text-xl font-medium mb-2">
                   Overview
                 </h5>
-                <p className="text-gray-700 text-base mb-4">{overview}</p>
+                <p className="text-gray-700 dark:text-slate-300 text-base mb-4">
+                  {overview}
+                </p>
               </div>
-              <ul className="bg-gray-100 rounded-lg border border-gray-400 text-gray-900">
+              <ul className="bg-gray-100 shadow-lg dark:bg-gray-500 rounded-lg border border-gray-400 text-orange-600 dark:text-white">
                 <li className="px-6 py-2 border-b border-gray-400 w-full rounded-t-lg">
-                  {"Release Date : " + release_date}
+                  <span className=" text-black dark:text-orange-200">
+                    Release Date :{" "}
+                  </span>
+                  {release_date}
                 </li>
                 <li className="px-6 py-2 border-b border-gray-400 w-full">
-                  {"Rate : " + vote_average}
+                  <span className="text-black dark:text-orange-200">
+                    Rate :{" "}
+                  </span>
+                  {vote_average}
                 </li>
                 <li className="px-6 py-2 border-b border-gray-400 w-full">
-                  {"Total Vote : " + vote_count}
+                  <span className="text-black dark:text-orange-200">
+                    Total Vote :{" "}
+                  </span>
+                  {vote_count}
                 </li>
                 <li className="px-6 py-2 border-gray-400 w-full rounded-t-lg">
                   <Link
                     to={-1}
-                    className="text-blue-600 hover:text-blue-700 transition duration-300 ease-in-out mb-4"
+                    className="text-blue-600 hover:text-blue-900 hover:underline dark:text-white dark:bg-gray-400 py-1 px-2  transition duration-300 ease-in-out mb-4"
                   >
                     Go Back
                   </Link>
