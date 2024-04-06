@@ -27,9 +27,14 @@ const AppRouter = () => {
             </ProtectedRouter>
           }
         />
-        <Route element={<ProtectedRouter />}>
-          <Route path="/details/:id" element={<MovieDetail />} />
-        </Route>
+        <Route
+          path="/details/:id"
+          element={
+            <ProtectedRouter>
+              <MovieDetail />
+            </ProtectedRouter>
+          }
+        />
 
         <Route path="*" element={<NotFound />} />
       </Routes>

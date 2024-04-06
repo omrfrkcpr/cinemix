@@ -18,7 +18,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="absolute w-full p-4 flex items-center justify-between z-50">
+    <div className="absolute w-full p-4 flex items-center justify-between z-50 text-white">
       <Link to="/">
         <h1 className="uppercase text-orange-600 font-nsans-bold cursor-pointer text-5xl">
           cinemix
@@ -27,9 +27,16 @@ const Navbar = () => {
 
       {user?.email ? (
         <div className="flex justify-center items-center">
+          {user && (
+            <h5 className="hidden md:block uppercase bg-black/70 py-2 px-4 rounded">
+              {user.displayName}
+            </h5>
+          )}
           <Switch />
           <Link to="/profile">
-            <button className="capitalize pr-4">profile</button>
+            <button className="capitalize px-6 py-2  bg-slate-400 rounded cursor-pointer me-2 ms-2 hover:bg-slate-600">
+              profile
+            </button>
           </Link>
 
           <button
@@ -43,11 +50,13 @@ const Navbar = () => {
         <div className="flex justify-center items-center">
           <Switch />
           <Link to="/login">
-            <button className="capitalize pr-4 text-white">login</button>
+            <button className="capitalize px-6 py-2  bg-slate-400 rounded cursor-pointer me-2 hover:bg-slate-600">
+              login
+            </button>
           </Link>
 
           <Link to="/signup">
-            <button className="capitalize bg-orange-600 px-6 py-2 rounded cursor-pointer text-white">
+            <button className="capitalize bg-orange-600 hover:bg-orange-700 px-6 py-2 rounded cursor-pointer text-white">
               sign up
             </button>
           </Link>
