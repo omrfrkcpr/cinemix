@@ -19,13 +19,13 @@ const NotFound = () => {
           <div className="flex flex-wrap items-center justify-center gap-3">
             <button
               onClick={() => navigate(-1)}
-              className="block py-2 px-4 text-gray-900 dark:text-gray-200 font-medium bg-main duration-150 hover:bg-red-main active:bg-indigo-700 rounded-lg"
+              className="block py-2 px-4 text-gray-900 dark:text-gray-200 font-medium bg-orange-400 duration-150 hover:bg-orange-600 active:bg-indigo-700 rounded-lg"
             >
               Go Back
             </button>
             <button
               onClick={() => navigate("/")}
-              className="block py-2 px-4 text-gray-700 dark:text-gray-200 hover:bg-red-main  hover:text-white font-medium duration-150 active:bg-gray-100 border rounded-lg"
+              className="block py-2 px-4 text-gray-700 dark:text-gray-200 hover:bg-orange-600  hover:text-white font-medium duration-150 active:bg-gray-100 border rounded-lg"
             >
               Go Home
             </button>

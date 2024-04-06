@@ -49,7 +49,7 @@ const Reset = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
-                <button className="bg-red-600 py-3 my-6 rounded font-nsans-bold">
+                <button className="bg-orange-600 py-3 my-6 rounded font-nsans-bold">
                   Login
                 </button>
               </form>
