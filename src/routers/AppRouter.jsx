@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Outlet } from "react-router-dom";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
@@ -14,6 +14,7 @@ const AppRouter = () => {
   return (
     <>
       <Navbar />
+      <Outlet />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
