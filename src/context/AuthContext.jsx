@@ -44,11 +44,11 @@ const AuthContextProvider = ({ children }) => {
       await updateProfile(auth.currentUser, {
         displayName: displayName,
       });
-      setDoc(doc(db, "users", email)),
-        {
-          favShows: [],
-        };
-      navigate("/login");
+
+      await setDoc(doc(db, "users", email), {
+        favShows: [],
+      });
+      navigate("/");
       toastSuccessNotify("You are successfully registered!");
       console.log(userCredential);
     } catch (error) {

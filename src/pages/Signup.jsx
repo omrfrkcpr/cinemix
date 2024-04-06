@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../context/AuthContext";
 import GoogleIcon from "../assets/GoogleIcon";
+import { toastSuccessNotify } from "../helpers/toastNotify";
 
 const Signup = () => {
   const [rememeberLogin, setRememberLogin] = useState(true);
@@ -12,6 +13,8 @@ const Signup = () => {
     lastName: "",
   });
 
+  const { email, password, firstName, lastName } = info;
+
   const { signup, signGoogleProvider } = useAuthContext();
   const navigate = useNavigate();
 
@@ -20,7 +23,7 @@ const Signup = () => {
 
     try {
       await signup(email, password, `${firstName} ${lastName}`);
-      navigate("/login");
+      navigate("/");
     } catch (err) {
       console.log(err);
     }
@@ -45,45 +48,49 @@ const Signup = () => {
         <div className="fixed w-full px-4 py-24 z-20">
           <div className="max-w-[450px] h-[600px] mx-auto dark:bg-black/80 bg-white/80 rounded-lg">
             <div className="max-w-[320px] mx-auto py-16">
-              <h1 className="text-3xl font-nsans-bold">Sign Up</h1>
+              <h1 className="text-3xl font-nsans-bold text-center">Sign Up</h1>
 
               <form
                 onSubmit={handleFormSubmit}
-                className="w-full flex flex-col py-4"
+                className="w-full flex flex-col py-4 text-white"
               >
                 <input
-                  className="p-3 my-2 bg-gray-700 rounded"
+                  className="p-3 my-2 bg-gray-500 rounded focus:outline-none"
                   type="text"
-                  placeholder="firstName"
+                  placeholder="Enter your firstname"
                   autoComplete="firstName"
-                  value={info.firstName}
+                  name="firstName"
+                  value={firstName}
                   onChange={handleChange}
                 />
                 <input
-                  className="p-3 my-2 bg-gray-700 rounded"
+                  className="p-3 my-2 bg-gray-500 rounded focus:outline-none"
                   type="text"
-                  placeholder="lastName"
+                  placeholder="Enter your lastname"
                   autoComplete="lastName"
-                  value={info.lastName}
+                  name="lastName"
+                  value={lastName}
                   onChange={handleChange}
                 />
                 <input
-                  className="p-3 my-2 bg-gray-700 rounded"
+                  className="p-3 my-2 bg-gray-500 rounded focus:outline-none"
                   type="email"
-                  placeholder="email"
+                  placeholder="Enter your email address"
                   autoComplete="email"
-                  value={info.email}
+                  name="email"
+                  value={email}
                   onChange={handleChange}
                 />
                 <input
-                  className="p-3 my-2 bg-gray-700 rounded"
+                  className="p-3 my-2 bg-gray-500 rounded focus:outline-none"
                   type="password"
-                  placeholder="password"
+                  placeholder="Enter password"
                   autoComplete="current-password"
-                  value={info.password}
+                  name="password"
+                  value={password}
                   onChange={handleChange}
                 />
-                <button className="bg-orange-600 py-3 my-4 rounded font-nsans-bold hover:bg-orange-700">
+                <button className="bg-orange-600 py-3 my-4 rounded font-nsans-bold hover:bg-orange-500">
                   Sign Up
                 </button>
                 <button
@@ -110,7 +117,9 @@ const Signup = () => {
                   <span className="text-gray-600 mr-2">
                     Already subscribed to Netflix?
                   </span>
-                  <Link to="/login">Sign In</Link>
+                  <Link to="/login" className="text-orange-500 dark:text-white">
+                    Sign In
+                  </Link>
                 </p>
               </form>
             </div>

@@ -28,7 +28,7 @@ const MovieCol = ({ movie }) => {
     }
   };
 
-  console.log(movie);
+  // console.log(movie);
 
   const handleIconClick = (e) => {
     e.stopPropagation();
