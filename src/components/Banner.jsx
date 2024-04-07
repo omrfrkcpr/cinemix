@@ -39,7 +39,7 @@ const Banner = () => {
           alt={title}
         />
 
-        <div className="absolute w-full top-[38%] md:top-[25%] lg:top-[30%] xl:top-[40%] p-4 md:p-8">
+        <div className="absolute w-full top-[38%] md:top-[25%] lg:top-[27%] xl:top-[40%] p-4 md:p-8">
           <h1 className="header-responsive text-3xl md:text-6xl font-nsans-bold">
             {title}
           </h1>

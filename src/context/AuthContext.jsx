@@ -48,6 +48,7 @@ const AuthContextProvider = ({ children }) => {
       await setDoc(doc(db, "users", email), {
         favShows: [],
       });
+
       navigate("/");
       toastSuccessNotify("You are successfully registered!");
       console.log(userCredential);
@@ -65,6 +66,9 @@ const AuthContextProvider = ({ children }) => {
     try {
       const provider = new GoogleAuthProvider();
       await signInWithPopup(auth, provider);
+      // await setDoc(doc(db, "users", provider.email), {
+      //   favShows: [],
+      // });
       navigate("/");
       toastSuccessNotify("Logged in!");
     } catch (err) {

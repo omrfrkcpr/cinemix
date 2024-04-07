@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import { AiOutlineClose } from "react-icons/ai";
 import { useAuthContext } from "../context/AuthContext";
@@ -9,6 +11,7 @@ import { arrayRemove, doc, onSnapshot, updateDoc } from "firebase/firestore";
 const Profile = () => {
   const [movies, setMovies] = useState([]);
   const { user } = useAuthContext();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (user) {
@@ -64,8 +67,8 @@ const Profile = () => {
       </div>
 
       {/* movie row */}
-      <h2 className="header-responsive font-nsans-bold md:text-xl p-4 capitalize">
-        Fav Shows
+      <h2 className="header-responsive font-nsans-bold md:text-xl p-4 ms-4 capitalize">
+        My Favorites
       </h2>
 
       <div className="relative flex items-center group">
@@ -76,7 +79,7 @@ const Profile = () => {
         />
         <div
           id={`slider`}
-          className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide"
+          className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide ms-5"
         >
           {movies.map((movie) => (
             <div
@@ -93,7 +96,10 @@ const Profile = () => {
               />
 
               <div className="absolute top-0 left-0 w-full h-40 bg-black/80 opacity-0 hover:opacity-100">
-                <p className="whitespace-normal text-xs md:text-sm flex justify-center items-center h-full font-nsans-bold">
+                <p
+                  className="whitespace-normal text-xs md:text-sm flex justify-center items-center h-full font-nsans-bold"
+                  onClick={() => navigate(`/details/${movie.id}`)}
+                >
                   {movie.title}
                 </p>
 
