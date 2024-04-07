@@ -62,7 +62,7 @@ const Login = () => {
                 </button>
                 <button
                   onClick={signGoogleProvider}
-                  className="btn-danger flex justify-between"
+                  className="btn-danger flex justify-between items-center"
                   type="button"
                 >
                   Continue with Google
@@ -78,11 +78,19 @@ const Login = () => {
                     />
                     Remember me
                   </p>
-                  <p>Need Help?</p>
+                  <p className="cursor-pointer">Need Help?</p>
                 </div>
-                <p className="my-4">
+                <p className="mt-5 mb-2">
                   <span className="text-gray-600 mr-2">New to Netflix?</span>
-                  <Link to="/signup">Sign Up</Link>
+                  <Link to="/signup" className="hover:underline">
+                    Sign Up
+                  </Link>
+                </p>
+                <p className="mt-0">
+                  <span className="text-gray-600 mr-2">Forgot Password?</span>
+                  <Link to="/reset" className="hover:underline">
+                    Reset
+                  </Link>
                 </p>
               </form>
             </div>

@@ -49,16 +49,24 @@ const Profile = () => {
         />
 
         <div className="bg-black/60 fixed top-0 left-0 w-full h-[500px]" />
-        <div className="absolute top-[20%] p-4 md:p-8">
-          <h1 className="text-3xl md:text-5xl font-nsans-bold my-2">
+        <div className="absolute top-[15%] p-4 md:p-8">
+          <h1 className="header-responsive md:text-5xl font-nsans-bold my-2">
             My Shows
           </h1>
-          <p className="font-nsans-light text-gray-400 text-lg">{user.email}</p>
+
+          <p className="font-nsans-light text-responsive text-gray-400 text-lg">
+            {user.displayName}
+          </p>
+          <p className="font-nsans-light text-responsive text-gray-400 text-lg">
+            {user.email}
+          </p>
         </div>
       </div>
 
       {/* movie row */}
-      <h2 className="font-nsans-bold md:text-xl p-4 capitalize">Fav Shows</h2>
+      <h2 className="header-responsive font-nsans-bold md:text-xl p-4 capitalize">
+        Fav Shows
+      </h2>
 
       <div className="relative flex items-center group">
         <MdChevronLeft

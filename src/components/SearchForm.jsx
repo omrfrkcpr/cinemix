@@ -38,16 +38,19 @@ const SearchForm = ({ setShow }) => {
     }
   };
   return (
-    <form onSubmit={handleSubmit} className="flex justify-center p-2 gap-2">
+    <form
+      onSubmit={handleSubmit}
+      className=" justify-center p-2 gap-2 hidden lg:block"
+    >
       <input
         type="search"
         name="query"
-        className="w-[200px] h-10 my-1 rounded-md px-4 text-black outline-none"
+        className="w-[200px] text-responsive h-9 rounded-md px-4 text-black outline-none"
         placeholder="Search a movie..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
-      <button className="text-black dark:text-white bg-slate-200 dark:bg-slate-900 rounded-md px-2">
+      <button className="text-black dark:text-white bg-slate-200 py-2 ms-2 dark:bg-slate-900 rounded-md px-2">
         Search
       </button>
     </form>

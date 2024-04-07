@@ -12,7 +12,7 @@ import ProtectedRouter from "./ProtectedRouter";
 
 const AppRouter = () => {
   return (
-    <>
+    <div>
       <Navbar />
       <Outlet />
       <Routes>
@@ -39,7 +39,7 @@ const AppRouter = () => {
 
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </>
+    </div>
   );
 };
 

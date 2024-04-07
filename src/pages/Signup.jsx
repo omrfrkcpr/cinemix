@@ -111,13 +111,16 @@ const Signup = () => {
                     />
                     Remember me
                   </p>
-                  <p>Need Help?</p>
+                  <p className="cursor-pointer">Need Help?</p>
                 </div>
                 <p className="my-4">
                   <span className="text-gray-600 mr-2">
                     Already subscribed to Netflix?
                   </span>
-                  <Link to="/login" className="text-orange-500 dark:text-white">
+                  <Link
+                    to="/login"
+                    className="text-orange-500 dark:text-white hover:underline"
+                  >
                     Sign In
                   </Link>
                 </p>

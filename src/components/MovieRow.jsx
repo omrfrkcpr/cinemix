@@ -18,7 +18,9 @@ const MovieRow = ({ title, url }) => {
 
   return (
     <div className="text-orange-500 dark:text-white">
-      <h2 className="font-nsans-bold md:text-xl p-4 capitalize">{title}</h2>
+      <h2 className="font-nsans-bold header-responsive p-4 capitalize">
+        {title}
+      </h2>
 
       <div className="relative flex items-center group">
         <MdChevronLeft

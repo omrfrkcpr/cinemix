@@ -16,7 +16,7 @@ const Switch = () => {
   }, [darkMode]);
 
   return (
-    <div className="flex col-span-1 justify-end ms-3">
+    <div className="flex col-span-1 justify-end">
       <button
         type="button"
         title="Toggle dark/light mode"
@@ -42,7 +42,7 @@ const Switch = () => {
           <svg
             aria-hidden="true"
             icon="moon"
-            className="w-4 h-4"
+            className="w-3 h-3"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
