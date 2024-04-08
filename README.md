@@ -176,12 +176,6 @@ With this project, a single-page Movie Application will be developed using React
 
 - Vite
 
-### At the end of the project, will be able to; 💪
-
-- improve coding skills within HTML & CSS (TailwindCSS) & JS & ReactJS.
-
-- use git commands (push, pull, commit, add etc.) and Github as Version Control System.
-
 ## Step-By-Step Project Guide
 
 - Step 1: Clone the Repository to Your Local Machine:
