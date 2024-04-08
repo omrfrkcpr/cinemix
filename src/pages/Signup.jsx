@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../context/AuthContext";
-import GoogleIcon from "../assets/GoogleIcon";
-import { toastSuccessNotify } from "../helpers/toastNotify";
 
 const Signup = () => {
   const [rememeberLogin, setRememberLogin] = useState(true);
@@ -15,7 +13,7 @@ const Signup = () => {
 
   const { email, password, firstName, lastName } = info;
 
-  const { signup, signGoogleProvider } = useAuthContext();
+  const { signup } = useAuthContext();
   const navigate = useNavigate();
 
   const handleFormSubmit = async (e) => {
@@ -33,7 +31,7 @@ const Signup = () => {
     setInfo({ ...info, [e.target.name]: e.target.value });
   };
 
-  console.log(info);
+  // console.log(info);
 
   return (
     <>
@@ -92,14 +90,6 @@ const Signup = () => {
                 />
                 <button className="bg-orange-600 py-3 my-4 rounded font-nsans-bold hover:bg-orange-500">
                   Sign Up
-                </button>
-                <button
-                  onClick={signGoogleProvider}
-                  className="btn-danger flex justify-between"
-                  type="button"
-                >
-                  Continue with Google
-                  <GoogleIcon color="currentColor" />
                 </button>
                 <div className="flex justify-between items-center text-gray-600">
                   <p>
