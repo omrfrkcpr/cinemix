@@ -8,6 +8,8 @@ Cinemix is a dynamic, responsive and user-friendly web application built using R
 
 ## Outcome
 
+![cinemix-app](https://github.com/omrfrkcpr/cinemix/assets/77440899/4e387660-22d1-448c-a48f-0768860882d1)
+
 ## Project Planning & Management
 
 **Epic User Story:** As a cinemix application user, I must be able to authenticate to the application both with email and password and with Google. I should also be able to see the details of the movie I want by querying it. Then I should be able to add and remove my favorite movies.🎥
@@ -143,7 +145,6 @@ Cinemix is a dynamic, responsive and user-friendly web application built using R
 │    ┗ main.jsx
 |
 ├── cinemix-app.gif
-├── cinemix-screenshots.png
 ├── .firebaserc
 ├── .gitignore
 ├── example.env
