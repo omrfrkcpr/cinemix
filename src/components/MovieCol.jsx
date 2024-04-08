@@ -5,7 +5,7 @@ import { arrayUnion, doc, updateDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../context/AuthContext";
 import { db } from "../auth/firebase";
-import { toastWarnNotify } from "../helpers/toastNotify";
+import { toastInfoNotify, toastWarnNotify } from "../helpers/toastNotify";
 
 const MovieCol = ({ movie }) => {
   const [like, setLike] = useState(false);
@@ -23,6 +23,7 @@ const MovieCol = ({ movie }) => {
       await updateDoc(userDoc, {
         favShows: arrayUnion({ ...movie }),
       });
+      toastInfoNotify("Added successfully to favorite movies 🎦");
     } else {
       toastWarnNotify("Login to save a movie");
     }
