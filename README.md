@@ -8,7 +8,7 @@ Cinemix is a dynamic, responsive and user-friendly web application built using R
 
 ## Outcome
 
-![cinemix-app](https://github.com/omrfrkcpr/cinemix/assets/77440899/4e387660-22d1-448c-a48f-0768860882d1)
+![cinemix-app](https://github.com/omrfrkcpr/cinemix/assets/77440899/3c6963d9-61a1-4e19-81dd-8acd8a48b845)
 
 ## Project Planning & Management
 
