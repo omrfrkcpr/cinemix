@@ -1,6 +1,6 @@
 # Cinemix App ©️
 
-💻 https://cinemix-app.vercel.app/
+💻 https://cinemix-a176f.web.app/
 
 ## Description
 
