@@ -81,7 +81,7 @@ const Login = () => {
                   <p className="cursor-pointer">Need Help?</p>
                 </div>
                 <p className="mt-5 mb-2">
-                  <span className="text-gray-600 mr-2">New to Netflix?</span>
+                  <span className="text-gray-600 mr-2">New to Cinemix?</span>
                   <Link to="/signup" className="hover:underline">
                     Sign Up
                   </Link>
