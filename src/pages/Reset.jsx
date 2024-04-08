@@ -33,7 +33,7 @@ const Reset = () => {
       <div className="dark:bg-black/70 bg-black/30 fixed top-0 left-0 w-full h-screen" />
 
       <div className="fixed w-full px-4 py-24 z-20">
-        <div className="max-w-[450px] h-[600px] mx-auto dark:bg-black/80 bg-white/80 rounded-lg">
+        <div className="max-w-[450px] h-[550px] mx-auto dark:bg-black/80 bg-white/80 rounded-lg">
           <div className="max-w-[320px] mx-auto py-16">
             <h1 className="header-responsive  font-nsans-bold text-center">
               Reset Password

@@ -21,7 +21,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="absolute w-full p-4 flex items-center justify-between z-50 text-white h-[80px] top-0 ">
+    <div className=" w-full p-4 flex items-center justify-between z-50 text-white h-[80px] top-0 fixed bg-black/70 ">
       <Link to="/">
         <h1 className="text-2xl shadow-md shadow-white md:text-3xl lg:text-4xl xl:text-5xl uppercase text-orange-600 font-nsans-bold cursor-pointer z-50 p-2 bg-slate-900">
           cinemix
